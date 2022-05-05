@@ -9,6 +9,10 @@ using System.Collections;
 using System.Linq;
 using Full_GRASP_And_SOLID.Library;
 
+//-------------------------
+// USE POLIMORFISMO
+//-------------------------
+
 namespace Full_GRASP_And_SOLID
 {
     public class Program
@@ -26,9 +30,13 @@ namespace Full_GRASP_And_SOLID
             recipe.AddStep(new Step(GetProduct("Café"), 100, GetEquipment("Cafetera"), 120));
             recipe.AddStep(new Step(GetProduct("Leche"), 200, GetEquipment("Hervidor"), 60));
 
-            AllInOnePrinter printer = new AllInOnePrinter();
-            printer.PrintRecipe(recipe, Destination.Console);
-            printer.PrintRecipe(recipe, Destination.File);
+            //AllInOnePrinter printer = new AllInOnePrinter();
+            //printer.PrintRecipe(recipe, Destination.Console);
+            //printer.PrintRecipe(recipe, Destination.File);
+            Console2 printerConsole = new Console2();
+            printerConsole.PrintRecipe(recipe);
+            File2 printerFile = new File2();
+            printerFile.PrintRecipe(recipe);
         }
 
         private static void PopulateCatalogs()
